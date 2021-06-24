@@ -18,13 +18,15 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
     [theme.breakpoints.up("md")]: {
       display: "flex",
+      marginLeft: "25%",
     },
   },
   appBar: {
-    background: "linear-gradient(0.25turn, black, #2196F3, #21CBF3)",
-    display: 'flex',
-    flexDirection: 'row',
+    background: theme.navBarColor,
+    display: "flex",
+    flexDirection: "row",
     alignItems: "center",
+    padding: "0 2rem",
   },
 }));
 
@@ -32,32 +34,28 @@ export default function NavBar() {
   const classes = useStyles();
 
   return (
-      <AppBar className={classes.appBar} position="relative">
-          <IconButton
-            className={classes.menuButton}
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Logo />
-          <Search widthMobile="50%"/>
-          <div className={classes.sectionDesktop}>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-      </AppBar>
+    <AppBar className={classes.appBar} position="relative">
+      <Logo />
+      <IconButton className={classes.menuButton} >
+        <MenuIcon />
+      </IconButton>
+
+      <Search />
+      <div className={classes.sectionDesktop}>
+        <IconButton>
+          <Badge badgeContent={4}>
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <IconButton >
+          <Badge badgeContent={17}>
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <IconButton >
+          <AccountCircle />
+        </IconButton>
+      </div>
+    </AppBar>
   );
 }

@@ -11,21 +11,6 @@ export default function Home() {
         <link rel="icon" href="/logoDos.png" />
       </Head>
       <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
-      <Logo width="100" height="100" />
     </>
   );
 }

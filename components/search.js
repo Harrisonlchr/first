@@ -11,11 +11,11 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
-    marginLeft: "20px",
+    marginLeft: "25%",
     width: "20%",
     [theme.breakpoints.down("sm")]: {
       marginLeft: theme.spacing(3),
-      width: props => props.widthMobile,
+      width: "50%",
     },
   },
   searchIcon: {

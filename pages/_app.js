@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ThemeProvider } from "@material-ui/core/styles";
 import NavBar from "../components/navBar";
+import Footer from "../components/footer";
 import { CssBaseline, Container } from "@material-ui/core";
 import theme from "./theme";
 import '../styles/globals.css'
@@ -25,6 +26,7 @@ export default function MyApp(props) {
         <Container fixed={false} maxWidth={false}>
           <Component {...pageProps} />
         </Container>
+        <Footer/>
       </ThemeProvider>
   );
 }
