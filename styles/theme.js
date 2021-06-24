@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { red } from "@material-ui/core/colors";
 import { esES } from "@material-ui/core/locale";
+import { BorderRight } from "@material-ui/icons";
 
 const colorDegradado = "linear-gradient(0.25turn, #111121, #C0FEFC)";
 const primaryColor = "#111121";
@@ -29,6 +30,14 @@ const theme = createMuiTheme(
       MuiCssBaseline: {
         "@global": {
           body: {
+            "&::-webkit-scrollbar": {
+              width: "10px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              background: "#848383",
+              borderRadius: "10px",
+              borderRight: "2px solid #ecececd1",
+            },
             backgroundColor: "#6f54541a",
             padding: 0,
             margin: 0,
@@ -103,11 +112,11 @@ const theme = createMuiTheme(
           color: primaryColor,
         },
       },
-      MuiAppBar:{
-        root:{
+      MuiAppBar: {
+        root: {
           background: colorDegradado,
-        }
-      }
+        },
+      },
     },
   },
   esES
