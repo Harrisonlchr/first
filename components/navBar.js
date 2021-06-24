@@ -10,7 +10,6 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import Logo from "../components/logo";
 import Search from "../components/search";
 
-
 const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
@@ -33,7 +32,7 @@ export default function NavBar() {
   const classes = useStyles();
 
   return (
-      <AppBar className={classes.appBar} position="fixed">
+      <AppBar className={classes.appBar} position="relative">
           <IconButton
             className={classes.menuButton}
             color="inherit"

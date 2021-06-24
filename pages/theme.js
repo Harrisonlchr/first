@@ -17,6 +17,14 @@ const theme = createMuiTheme({
       default: '#fff',
     },
   },
+  overrides: {
+    MuiContainer: {
+      root: {
+        height: '100vh',
+        maxWidth: "90vw"
+      },
+    },
+  },
 });
 
 export default theme;
