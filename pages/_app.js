@@ -4,8 +4,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
 import { CssBaseline, Container } from "@material-ui/core";
-import theme from "./theme";
-import '../styles/globals.css'
+import theme from "../styles/theme";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -23,7 +22,7 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <NavBar />
-        <Container fixed={false} maxWidth={false}>
+        <Container fixed={false} maxWidth={false} className="containerApp">
           <Component {...pageProps} />
         </Container>
         <Footer/>

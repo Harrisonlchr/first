@@ -22,30 +22,14 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "25%",
     },
   },
-  appBar: {
-    background: theme.navBarColor,
-  },
-  containerNavbar: {
-    height: theme.heightContainerNavbar,
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between"
-  },
 }));
 
 export default function NavBar() {
   const classes = useStyles();
 
   return (
-    <AppBar className={classes.appBar} position="relative">
-      <Container
-        fixed={false}
-        maxWidth={false}
-        classes={{
-          root: classes.containerNavbar
-        }}
-      >
+    <AppBar position="sticky">
+      <Container fixed={false} maxWidth={false} className="containerNavBar">
         <Logo />
         <IconButton className={classes.menuButton}>
           <MenuIcon />
