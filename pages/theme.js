@@ -7,6 +7,11 @@ const secundaryColor = "#cccc";
 const badgeColor = "linear-gradient(0.25turn, #f10707f7, #0606068c)";
 const iconButtonColor = "white";
 
+const containerHeight = "100vh"
+const containerMaxWidth = "90vw"
+const heightContainerNavbar = "4rem"
+const heightContainerFooter = "6rem"
+
 // Create a theme instance.
 const theme = createMuiTheme({
   palette: {
@@ -26,8 +31,8 @@ const theme = createMuiTheme({
   overrides: {
     MuiContainer: {
       root: {
-        height: "100vh",
-        maxWidth: "90vw",
+        height: containerHeight,
+        maxWidth: containerMaxWidth,
       },
     },
     MuiBadge: {
@@ -42,6 +47,8 @@ const theme = createMuiTheme({
     },
   },
   navBarColor: colorDegradado,
+  heightContainerNavbar: heightContainerNavbar,
+  heightContainerFooter: heightContainerFooter
 });
 
 export default theme;

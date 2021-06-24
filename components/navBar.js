@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Container } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
@@ -23,10 +24,12 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     background: theme.navBarColor,
+  },
+  containerNavbar: {
+    height: theme.heightContainerNavbar,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    padding: "0 2rem",
   },
 }));
 
@@ -35,27 +38,35 @@ export default function NavBar() {
 
   return (
     <AppBar className={classes.appBar} position="relative">
-      <Logo />
-      <IconButton className={classes.menuButton} >
-        <MenuIcon />
-      </IconButton>
+      <Container
+        fixed={false}
+        maxWidth={false}
+        classes={{
+          root: classes.containerNavbar
+        }}
+      >
+        <Logo />
+        <IconButton className={classes.menuButton}>
+          <MenuIcon />
+        </IconButton>
 
-      <Search />
-      <div className={classes.sectionDesktop}>
-        <IconButton>
-          <Badge badgeContent={4}>
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <IconButton >
-          <Badge badgeContent={17}>
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <IconButton >
-          <AccountCircle />
-        </IconButton>
-      </div>
+        <Search />
+        <div className={classes.sectionDesktop}>
+          <IconButton>
+            <Badge badgeContent={4}>
+              <MailIcon />
+            </Badge>
+          </IconButton>
+          <IconButton>
+            <Badge badgeContent={17}>
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton>
+            <AccountCircle />
+          </IconButton>
+        </div>
+      </Container>
     </AppBar>
   );
 }
