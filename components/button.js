@@ -6,7 +6,6 @@ export default function ButtonCustom({loading, text, icon, disabled}) {
     <Button
       startIcon={icon ? icon : null}
       disabled={loading || disabled}
-      variant="outline"
     >
       {text}
       {loading && (

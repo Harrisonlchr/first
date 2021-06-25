@@ -95,7 +95,6 @@ const theme = createMuiTheme(
           borderRadius: "3px",
           margin: "1rem",
           textTransform: "uppercase",
-          padding: "0.5rem 1.5rem",
           color: iconButtonColor,
           position: "relative",
           background: colorDegradado,
@@ -103,6 +102,9 @@ const theme = createMuiTheme(
             background: secundaryColor,
           },
         },
+        text:{
+          padding: "0.5rem 1.5rem",
+        }
       },
       MuiCircularProgress: {
         root: {
