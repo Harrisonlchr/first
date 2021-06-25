@@ -31,12 +31,12 @@ const theme = createMuiTheme(
         "@global": {
           body: {
             "&::-webkit-scrollbar": {
-              width: "10px",
+              width: "8px",
             },
             "&::-webkit-scrollbar-thumb": {
-              background: "#848383",
-              borderRadius: "10px",
-              borderRight: "2px solid #ecececd1",
+              background: colorDegradado,
+              borderRadius: "8px",
+              border: "1px solid white",
             },
             backgroundColor: "#6f54541a",
             padding: 0,
