@@ -102,9 +102,9 @@ const theme = createMuiTheme(
             background: secundaryColor,
           },
         },
-        text:{
+        text: {
           padding: "0.5rem 1.5rem",
-        }
+        },
       },
       MuiCircularProgress: {
         root: {
@@ -117,6 +117,11 @@ const theme = createMuiTheme(
       MuiAppBar: {
         root: {
           background: colorDegradado,
+        },
+      },
+      MuiAvatar: {
+        root: {
+          cursor: "pointer",
         },
       },
     },

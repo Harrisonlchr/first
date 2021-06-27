@@ -1,15 +1,11 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container } from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
-import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
+import { Container, Avatar, AppBar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import Logo from "../components/logo";
 import Search from "../components/search";
+import { loginWithGithub, authStateChanged } from "../firebase/client";
 
 const useStyles = makeStyles((theme) => ({
   menuButton: {
@@ -26,6 +22,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
   const classes = useStyles();
+  //states
+  const [user, setUser] = useState();
+
+  //functions
+  const handlerClickAccount = () => {
+    loginWithGithub();
+  };
+
+  //effect
+  useEffect(() => {
+    authStateChanged(setUser);
+  }, []);
 
   return (
     <AppBar position="sticky">
@@ -37,7 +45,7 @@ export default function NavBar() {
 
         <Search />
         <div className={classes.sectionDesktop}>
-          <IconButton>
+          {/* <IconButton>
             <Badge badgeContent={4}>
               <MailIcon />
             </Badge>
@@ -46,10 +54,15 @@ export default function NavBar() {
             <Badge badgeContent={17}>
               <NotificationsIcon />
             </Badge>
-          </IconButton>
-          <IconButton>
-            <AccountCircle />
-          </IconButton>
+          </IconButton> */}
+
+          {user ? (
+            <Avatar alt="user" src={user.avatar} />
+          ) : (
+            <IconButton onClick={handlerClickAccount}>
+              <AccountCircle />
+            </IconButton>
+          )}
         </div>
       </Container>
     </AppBar>

@@ -17,19 +17,6 @@ export default function Home() {
       <ButtonCustom text="boton personalizado disableado" disabled/>
       <ButtonCustom text="boton personalizado cargando" loading/>
       </div>
-      <div style={{display:'flex', flexDirection:'column'}}>
-      <ButtonCustom text="boton personalizado con icono" icon={<DeleteIcon/>}/>
-      <ButtonCustom text="boton personalizado" />
-      <ButtonCustom text="boton personalizado disableado" disabled/>
-      <ButtonCustom text="boton personalizado cargando" loading/>
-      </div>
-      <div style={{display:'flex', flexDirection:'column'}}>
-      <ButtonCustom text="boton personalizado con icono" icon={<DeleteIcon/>}/>
-      <ButtonCustom text="boton personalizado" />
-      <ButtonCustom text="boton personalizado disableado" disabled/>
-      <ButtonCustom text="boton personalizado cargando" loading/>
-      </div>
-
     </>
   );
 }
