@@ -14,10 +14,15 @@ const firebaseConfig = {
 // si no existe una instancia de Firebase creada la crea.
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
 
+//Instancia de DDBB Firebase
+const db = firebase.firestore()
+
+// Login con GitHub
 export const loginWithGithub = async () => {
   await firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider());
 };
 
+// Verificacion de authState user
 export const authStateChanged = (setUser) => {
    firebase.auth().onAuthStateChanged(user => user && setUser({
     avatar: user.photoURL,
@@ -25,3 +30,23 @@ export const authStateChanged = (setUser) => {
     email: user.email
   }));
 };
+
+// Ejemplo de la DDBB
+export const addUserAddress = ({}) => {
+  return db.collection("Address").add({})
+}
+
+export const getUserAddress = ({}) => { 
+  return db.collection("Address").orderBy("createdAt", "desc").get().then(({docs}) => {
+    return docs.map((doc) =>{
+      const data = doc.data()
+      const id = doc.id()
+      return {
+        data,
+        id
+      }
+    })
+  })
+}
+
+
