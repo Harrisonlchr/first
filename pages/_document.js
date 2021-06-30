@@ -1,6 +1,6 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/core/styles';
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheets } from "@material-ui/core/styles";
 import theme from "../styles/theme";
 
 export default class MyDocument extends Document {
@@ -9,6 +9,9 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/logoDos.png" />
+          {/* <link rel="apple-touch-icon" href="/phone.png" /> */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"
@@ -63,6 +66,9 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheets.getStyleElement(),
+    ],
   };
 };
